@@ -1,0 +1,27 @@
+name: Slot Maschine
+
+on: [push]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Clone Radix Scrypto environment
+    - uses: actions/checkout@v2
+      with:
+        repository: https://github.com/radixdlt/radixdlt-scrypto.git
+    - name: Init radix simulator
+      run: |
+        cd radixdlt-scrypto \
+        cargo install --path ./simulator \
+        
+    - name: Clone community scrypto
+      uses: actions/checkout@v2
+    - name: List files in the repository
+      run: |
+          ls ${{ github.workspace }}
+    
