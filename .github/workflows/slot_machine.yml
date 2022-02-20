@@ -16,8 +16,8 @@ jobs:
         repository: radixdlt/radixdlt-scrypto
     - name: Init radix simulator
       run: |
-        cd radixdlt-scrypto \
-        cargo install --path ./simulator \
+        cd radixdlt-scrypto
+        cargo install --path ./simulator
 
     - name: Clone community scrypto
       uses: actions/checkout@v2
