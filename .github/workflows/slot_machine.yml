@@ -1,6 +1,9 @@
 name: Slot Maschine
 
-on: [push]
+on:
+  push:
+    paths:
+      - 'toys/slot_machine/**'
 
 env:
   CARGO_TERM_COLOR: always
