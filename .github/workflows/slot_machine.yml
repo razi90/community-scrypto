@@ -3,7 +3,7 @@ name: Slot Maschine
 on:
   push:
     paths:
-    - 'toys/slot_machine/**'
+    - 'toys/**'
 
 env:
   CARGO_TERM_COLOR: always
