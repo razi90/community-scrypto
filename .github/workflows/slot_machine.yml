@@ -13,7 +13,7 @@ jobs:
     - name: Clone Radix Scrypto environment
       uses: actions/checkout@v2
       with:
-        repository: https://github.com/radixdlt/radixdlt-scrypto.git
+        repository: {radixdlt}/{radixdlt-scrypto}
     - name: Init radix simulator
       run: |
         cd radixdlt-scrypto \
