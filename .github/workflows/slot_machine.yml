@@ -20,10 +20,14 @@ jobs:
       with:
         path: ./community-scrypto
 
-    # - name: Init radix simulator
-    #   run: cargo install --path ./simulator
+    - name: Init radix simulator
+       run: |
+        source $HOME/.cargo/env
+        rustup target add wasm32-unknown-unknown
+        cargo install --path ./simulator
 
-    - name: List files in the repository
+    - name: Execute tests
       run: |
-          ls ${{ github.workspace }}
+        cd ./community-scrypto/toys/slot-machine
+        scrypto test
 
