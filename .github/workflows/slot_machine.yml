@@ -16,15 +16,12 @@ jobs:
         repository: radixdlt/radixdlt-scrypto
 
     - name: Init radix simulator
-      run: ls ${{ github.workspace }}
-
-      # run: |
-      #   cd radixdlt-scrypto
-      #   cargo install --path ./simulator
-
+      run: cargo install --path ./simulator
 
     - name: Clone community scrypto
       uses: actions/checkout@v2
+      with:
+        path: ./community-scrypto
 
     - name: List files in the repository
       run: |
