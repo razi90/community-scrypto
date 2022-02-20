@@ -10,20 +10,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Clone Radix scrypto environment
-      uses: actions/checkout@v2
-      with:
-        repository: radixdlt/radixdlt-scrypto
+    # - name: Clone Radix scrypto environment
+    #   uses: actions/checkout@v2
+    #   with:
+    #     repository: radixdlt/radixdlt-scrypto
 
-    - name: Init radix simulator
-      run: cargo install --path ./simulator
+    # - name: Clone community scrypto repository
+    #   uses: actions/checkout@v2
+    #   with:
+    #     path: ./community-scrypto
 
-    - name: Clone community scrypto
-      uses: actions/checkout@v2
-      with:
-        path: ./community-scrypto
+    # - name: Init radix simulator
+    #   run: cargo install --path ./simulator
 
-    - name: List files in the repository
-      run: |
-          ls ${{ github.workspace }}
+    # - name: List files in the repository
+    #   run: |
+    #       ls ${{ github.workspace }}
+      - name: Clone community scrypto repository
+        uses: actions/checkout@v2
+      - name: Execute tests
+        run: |
+          cd ./toys/slot-machine
+          scrypto test
 
